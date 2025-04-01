@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Шаблон формы</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.4;
+    }
+    h1 {
+      font-size: 1.4em;
+      margin-bottom: 1em;
+    }
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+    }
+    .left-column, .right-column {
+      flex: 1 1 300px;
+      min-width: 300px;
+    }
+    .field-group {
+      margin-bottom: 1em;
+    }
+    .field-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.3em;
+    }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.4em;
+      box-sizing: border-box;
+    }
+    .submit-btn {
+      margin-top: 20px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Личная информация</h1>
+  <div class="form-container">
+
+    <!-- Левая колонка -->
+    <div class="left-column">
+      <div class="field-group">
+        <label for="surname-ru">Фамилия (рус)</label>
+        <input type="text" id="surname-ru" placeholder="Иванов" />
+      </div>
+      <div class="field-group">
+        <label for="surname-en">Фамилия (англ)</label>
+        <input type="text" id="surname-en" placeholder="Ivanov" />
+      </div>
+      <div class="field-group">
+        <label for="name-ru">Имя (рус)</label>
+        <input type="text" id="name-ru" placeholder="Иван" />
+      </div>
+      <div class="field-group">
+        <label for="name-en">Имя (англ)</label>
+        <input type="text" id="name-en" placeholder="Ivan" />
+      </div>
+      <div class="field-group">
+        <label for="patronymic-ru">Отчество (рус)</label>
+        <input type="text" id="patronymic-ru" placeholder="Иванович" />
+      </div>
+      <div class="field-group">
+        <label for="patronymic-en">Отчество (англ)</label>
+        <input type="text" id="patronymic-en" placeholder="Ivanovich" />
+      </div>
+      <div class="field-group">
+        <label for="position">Должность</label>
+        <input type="text" id="position" placeholder="Стажер-исследователь" />
+      </div>
+      <div class="field-group">
+        <label for="department">Подразделение</label>
+        <input type="text" id="department" placeholder="Научное подразделение" />
+      </div>
+      <div class="field-group">
+        <label for="manager">Руководитель</label>
+        <input type="text" id="manager" placeholder="ФИО руководителя" />
+      </div>
+      <div class="field-group">
+        <label for="main-location">Основное местонахождение</label>
+        <input type="text" id="main-location" placeholder="Москва, ... (адрес)" />
+      </div>
+      <div class="field-group">
+        <label for="presence-time">Время присутствия</label>
+        <input type="text" id="presence-time" placeholder="9:00-18:00 пн-пт" />
+      </div>
+      <div class="field-group">
+        <label for="presence-type">Тип присутствия</label>
+        <input type="text" id="presence-type" placeholder="Полный рабочий день / Удаленно / ..." />
+      </div>
+    </div>
+
+    <!-- Правая колонка -->
+    <div class="right-column">
+      <h2 class="section-title">Список телефонов</h2>
+      <div class="field-group">
+        <label for="city-phone">Городской телефон</label>
+        <input type="text" id="city-phone" placeholder="(495) 123-45-67" />
+      </div>
+      <div class="field-group">
+        <label for="internal-number">Внутренний номер</label>
+        <input type="text" id="internal-number" placeholder="0000" />
+      </div>
+      <div class="field-group">
+        <label for="mobile-work">Мобильный рабочий</label>
+        <input type="text" id="mobile-work" placeholder="+7 (900) 000-00-00" />
+      </div>
+      <div class="field-group">
+        <label for="mobile-personal">Мобильный личный</label>
+        <input type="text" id="mobile-personal" placeholder="+7 (900) 111-11-11" />
+      </div>
+      <div class="field-group">
+        <label for="email">Электронная почта</label>
+        <input type="text" id="email" placeholder="example@hse.ru" />
+      </div>
+      <div class="field-group">
+        <label for="portal-link">Страница на портале</label>
+        <input type="text" id="portal-link" placeholder="Ссылка на личную страницу" />
+      </div>
+
+      <p>
+        Если Вы заметили несоответствие в Вашей личной информации и хотели бы её актуализировать, нажмите кнопку ниже:
+      </p>
+      <button type="button">Изменить информацию о себе</button>
+    </div>
+  </div>
+
+  <h2 class="section-title">Параметры заявки</h2>
+  <div class="form-container">
+    <div class="left-column">
+      <div class="field-group">
+        <label for="campus">Кампус / город</label>
+        <select id="campus">
+          <option value="moscow">Москва</option>
+          <option value="spb">Санкт-Петербург</option>
+          <option value="nnov">Нижний Новгород</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="address">Адрес места неисправности</label>
+        <textarea id="address" rows="3" placeholder="Укажите адрес..."></textarea>
+      </div>
+      <div class="field-group">
+        <label for="room">Номер помещения</label>
+        <input type="text" id="room" placeholder="Например, N000" />
+      </div>
+      <div class="field-group">
+        <label for="location-comment">Комментарий к месту</label>
+        <input type="text" id="location-comment" placeholder="Внутри / снаружи, и т.д." />
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="field-group">
+        <label for="request-type">Тип обращения</label>
+        <select id="request-type">
+          <option value="tech">Техническая неисправность</option>
+          <option value="it">IT-поддержка</option>
+          <option value="cleaning">Уборка / Хоз. вопросы</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="attachment">Прикрепить файл (до 3 МБ)</label>
+        <input type="file" id="attachment" />
+      </div>
+      <div class="field-group">
+        <label for="description">Описание проблемы</label>
+        <textarea id="description" rows="3" placeholder="Опишите, что не так..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="submit-btn">
+    <button type="submit">Отправить заявку</button>
+  </div>
+</body>
+</html>
